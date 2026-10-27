@@ -1,0 +1,11 @@
+services:
+  nginx:
+    image: nginx:stable
+    container_name: nginx-lab-lb
+    restart: unless-stopped
+
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
